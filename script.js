@@ -6,10 +6,8 @@
 
 
 function toIP(data) {
-	var str = (data >> 24 & 0xFF).toString() + "." +
+	return (data >> 24 & 0xFF).toString() + "." +
 		(data >> 16 & 0xFF).toString() + "." + (data >> 8 & 0xFF).toString() + "." + (data & 0xFF).toString();
-
-	return str;
 }
 
 
@@ -30,7 +28,6 @@ function randomIP(form) {
 	randomcidr=Math.floor(Math.random() * (31 - 8) + 8);
 	form.cidrinput2.value = randomcidr;
 }
-
 
 function calcIP(form) {
 
