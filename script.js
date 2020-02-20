@@ -29,8 +29,6 @@ function randomIP(form) {
 	form.ipinput2.value = iprandom;
 	randomcidr=Math.floor(Math.random() * (31 - 8) + 8);
 	form.cidrinput2.value = randomcidr;
-
-	return true;
 }
 
 
@@ -54,11 +52,7 @@ function calcIP(form) {
 		form.sminput.value="";
 
 		inputmask2=toIP(0xFFFFFFFF << y);
-			
-		// console.log(inputmask);
 	}
-	
-	// console.log(inputmask);
 
 	if (checkInput(inputip)==false || checkInput(inputmask)==false) {
 		alert("Input Error\nInput example:\n192.168.10.10 for ip\n255.255.255.0 for the mask \nTry again");
@@ -125,6 +119,5 @@ function checkInput(ipp) {
 		if (expectedChars.indexOf(ipp.charAt(i)) === -1) break;
 		if (ipp.charAt(i) == '.') dot++;
 	}
-	//console.log(dot, i);
 	return (dot == 3) && (i == ipp.length);
 }
